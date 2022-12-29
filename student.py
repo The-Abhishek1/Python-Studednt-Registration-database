@@ -58,7 +58,29 @@ def showimage():
 #it is created to automatic enter registration no
 
 def registration_no():
-    pass
+    file = openpyxl.load_workbook('student_data.xlsx')
+    sheet = file.active 
+    row=sheet.max_row
+    
+    max_row_value = sheet.cell(row=row,column=1).value
+    
+    try:
+        Registration.set(max_row_value+1)
+    except:
+        Registration.set("1")
+        
+#Clear
+def Clear():
+    Name.set('')
+    DOB.set('')
+    Religion.set('')
+    Skill.set('')
+    F_Name.set('')
+    M_Name.set('')
+    Father_Occupation.set('')
+    Mother_Occupation.set('')
+    Class.set("")
+    
 
 #gender
 def selection():
@@ -97,6 +119,8 @@ Date = StringVar()
 
 reg_entry = Entry(root,textvariable=Registration,width=15,font="arial 10")
 reg_entry.place(x=160,y=150)
+
+registration_no()
 
 #Registration_no()
 
@@ -185,7 +209,7 @@ lbl.place(x=0,y=0)
 
 Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue",command=showimage).place(x=1000,y=370)
 saveButton =Button(root,text="Save",width=19,height=2,font="arial 12 bold",bg="lightgreen").place(x=1000,y=450)
-Button(root,text="Reset",width=19,height=2,font="arial 12 bold",bg="lightpink").place(x=1000,y=530)
+Button(root,text="Reset",width=19,height=2,font="arial 12 bold",bg="lightpink",command=Clear).place(x=1000,y=530)
 Button(root,text="Exit",width=19,height=2,font="arial 12 bold",bg="grey",command=Exit).place(x=1000,y=610)
 
 root.mainloop()
