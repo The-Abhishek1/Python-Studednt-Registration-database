@@ -64,15 +64,15 @@ Label(root,text="STUDENT REGISTRATION",width=10,height=2,bg="#c36464",font='aria
 Search = StringVar()
 Entry(root,textvariable=Search,width=15,bd=2,font="arial 20").place(x=820,y=70)
 
-imageicon3=PhotoImage(file="Images/search.png")
-Srch=Button(root,text="Search",compound=LEFT,image=imageicon3,width=123,bg="#68ddfa",font="arial 13 bold")
-Srch.place(x=1060,y=66)
+#imageicon3=PhotoImage(file="Images/search.png")
+#Srch=Button(root,text="Search",compound=LEFT,image=imageicon3,width=123,bg="#68ddfa",font="arial 13 bold")
+#Srch.place(x=1060,y=66)
 
 
 
-imageicon4=PhotoImage(file="Images/Layer 4.png")
-Update_button= Button(root,image=imageicon4,bg="#c36464")
-Update_button.place(x=110,y=64)
+#imageicon4=PhotoImage(file="Images/Layer 4.png")
+#Update_button= Button(root,image=imageicon4,bg="#c36464")
+#Update_button.place(x=110,y=64)
 
 
 #Registration and Date
