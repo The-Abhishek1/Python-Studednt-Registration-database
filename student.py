@@ -45,6 +45,19 @@ def Exit():
 
 #Show Image
 def showimage():
+    global filename
+    global img
+    filename = filedialog.askopenfilename(initialdir=os.getcwd(),title="Select image file",filetypes=(("JPG File","*.jpg"),("PNG File","*.png"),("All files","*.txt")))
+    img = (Image.open(filename))
+    resized_image = img.resize((190, 190))
+    photo2 = ImageTk.PhotoImage(resized_image)
+    lbl.config(image=photo2)
+    lbl.image=photo2
+
+#Registration No
+#it is created to automatic enter registration no
+
+def registration_no():
     pass
 
 #gender
